@@ -1,0 +1,9 @@
+target/
+evidence/
+.env
+.jenkins-password
+*.log
+.DS_Store
+.impeccable/
+.hallmark/
+.codegraph/

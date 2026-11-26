@@ -1,0 +1,5 @@
+*
+!pom.xml
+!checkstyle.xml
+!src/
+!src/**

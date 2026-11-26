@@ -1,0 +1,15 @@
+:root {
+  --color-paper: oklch(100% 0 0);
+  --color-ink: oklch(25% 0.012 155);
+  --color-muted: oklch(43% 0.014 155);
+  --color-line: oklch(77% 0.012 155);
+  --color-field: oklch(97% 0.005 155);
+  --color-accent: oklch(37% 0.07 155);
+  --color-hover: oklch(30% 0.07 155);
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+}
