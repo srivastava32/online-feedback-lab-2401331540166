@@ -1,0 +1,35 @@
+name: online-feedback-srivastava
+services:
+  feedback:
+    image: online-feedback-srivastava:1.0
+    build: .
+    ports:
+      - "127.0.0.1:8082:8082"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp
+  jenkins:
+    profiles: [ci]
+    image: online-feedback-srivastava-jenkins:1.0
+    build: ./jenkins
+    ports:
+      - "127.0.0.1:8083:8080"
+    environment:
+      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false -Xmx768m"
+      LAB_SOURCE_DIR: /lab-source
+    volumes:
+      - jenkins-home:/var/jenkins_home
+      - .:/lab-source:ro
+    secrets:
+      - jenkins_password
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+secrets:
+  jenkins_password:
+    file: .jenkins-password
+volumes:
+  jenkins-home:
